@@ -475,12 +475,7 @@ end
 ---Get remote neovim binary directory
 ---@return string binary_dir Remote neovim binary directory
 function Provider:_remote_neovim_binary_dir()
-  return utils.path_join(
-    self._remote_is_windows,
-    self._remote_neovim_home,
-    "nvim-downloads",
-    self._remote_neovim_version
-  )
+  return utils.path_join(self._remote_is_windows, "run", "current-system", "sw")
 end
 
 ---@private
