@@ -599,7 +599,8 @@ function Provider:_launch_remote_neovim_server()
   if not self:is_remote_server_running() then
     -- Find free port on remote
     local free_port_on_remote_cmd = ("%s -l %s"):format(
-      self:_remote_neovim_binary_path(),
+      "nvim",
+      -- self:_remote_neovim_binary_path(),
       utils.path_join(self._remote_is_windows, self._remote_scripts_path, "free_port_finder.lua")
     )
     self:run_command(free_port_on_remote_cmd, "Searching for free port on the remote machine")
