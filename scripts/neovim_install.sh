@@ -186,4 +186,5 @@ fi
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 download_neovim_script="$SCRIPT_DIR/neovim_download.sh"
 cd "$temp_dir" || exit 1
+check_neovim_in_path
 install_neovim
